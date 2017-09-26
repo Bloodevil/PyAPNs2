@@ -34,7 +34,7 @@ class APNsClient(object):
 
     def __init__(self, credentials, use_sandbox=False, use_alternative_port=False, proto=None, json_encoder=None,
                  password=None):
-        if credentials is None or isinstance(credentials, str):
+        if credentials is None or isinstance(credentials, str) or isinstance(credentials, tuple):
             self.__credentials = CertificateCredentials(credentials, password)
         else:
             self.__credentials = credentials
